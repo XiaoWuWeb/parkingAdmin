@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="border:solid 1px red;width:150px;height:150px;" id="box"></div>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+	<script type="text/javascript">  
+
+		$(function(){
+			var goEasy = new GoEasy({  appkey: "BC-8e162c28565c41a2bfae9a6b9a0e5212"  });  
+			goEasy.subscribe({  
+		    channel: "my_channel",  
+		        onMessage: function(message){
+		        	/*alert(message.content);  */
+		        	console.log(message.content);
+		        	$("[id='box']").text(message.content);
+		           }  
+		    }); 
+		})
+		
+	</script>
+</body>
+</html>
+
+	

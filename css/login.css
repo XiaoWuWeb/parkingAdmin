@@ -1,0 +1,98 @@
+body{
+	background:url(../images/login_background.png) 0 0;
+}
+input:-webkit-autofill { box-shadow: 0 0 0px 1000px white inset !important;}
+/*input:checked{-webkit-appearance:none;background-color: #fff;}*/
+.login{
+	position:fixed;
+	right:20%;
+	top:240px;
+	height:398px;
+	width:380px;
+	background-color:#fff;
+	margin-right:-190px;
+	border-radius:6px;
+}
+.login h2{
+	font-size: 18px;
+	text-align: center;
+	color: #3284fc;
+	margin: 45px 0;
+}
+
+.login label{
+	display: block;
+	position: relative;
+}
+
+.login-input::-webkit-input-placeholder{color:#909090;}
+
+.login-input{
+	width: 258px;
+    height: 48px;
+    font-size:14px;
+    line-height: 48px;
+	color: #909090;
+    border: 1px solid #909090;
+    border-radius:6px;
+    padding: 0 0 0 40px;
+    margin:0 0 20px 40px;
+    outline: none;
+}
+
+.user-icon{
+	display: block;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 50%;
+	left: 55px;
+	margin-top: -18px;
+	background: url(../images/login_icon_users-name.png) no-repeat;
+}
+
+.password-icon{
+	display: block;
+	width: 18px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	left: 55px;
+	margin-top: -20px;
+	background: url(../images/login_icon_password.png) no-repeat;
+}
+
+.check-box{
+	margin-left: 40px;
+}
+
+#remember-password-checkbox{
+	width: 18px;
+	height: 18px;
+	background-color: #fff;
+	border: 1px solid #909090;
+	margin-right: 10px;
+	float: left;
+	vertical-align: middle;
+}
+
+.checkbox-cont{
+	font-size: 14px;
+	color: #909090;
+	line-height: 18px;
+	float: left;
+}
+
+.on-login{
+	width:300px;
+	height:50px;
+	background-color:#3897fd;
+	border-radius:6px;
+	border:none;
+	color: #ffffff;
+	font-size:16px;
+	text-align: center;
+	line-height: 50px;
+	margin:38px 0 0 40px;
+	cursor: pointer;
+}

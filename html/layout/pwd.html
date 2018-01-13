@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../css/sweet-alert.css"/>
+    <style type="text/css">
+    	.clearfix { *zoom: 1;} 
+		.clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
+		.clearfix:after { clear: both;}
+    	ul{padding: 0;}
+    	li{list-style-image:none;list-style-position: outside;list-style-type:none;}
+    	input[type=text],input[type=password],textarea, input[type=text]:focus, input[type=password]:focus, textarea:focus, button, button:focus{-webkit-appearance:textfield;outline:0}
+    	.zh{font-size: 14px;color: #909090;}
+    	.zhsr{width: 198px;height: 46px;border: 1px #909090 solid; border-radius: 6px; padding-left: 10px;}
+ 		#comfirm_btn{
+ 			margin: 40px auto 0; height:50px;width: 300px;  background-color:#3897fd;border-radius:6px;color:#ffffff;border:none ;font-size:16px;line-height:50px;text-align: center; cursor:pointer;
+ 		}
+
+    </style>
+</head>
+<body style="margin-left: 40px; margin-top: 28px;">
+	<div id="time-cycle" style="display: none;"></div>
+	<ul>
+		<li class="clearfix" style="margin-bottom: 20px;text-align: center;">
+			<label class="zh" for="userPassword" style="float: left;margin:13px 20px 0 21px;">旧密码：</label>
+			<input class="zhsr" id="userPassword" maxlength="20" type="password" style="float: left;"/>
+		</li>
+		<li class="clearfix" style="margin-bottom: 20px;text-align: center;">
+			<label class="zh" for="newpassword" style="float: left;margin:13px 20px 0 21px;">新密码：</label>
+			<input class="zhsr" id="newpassword" maxlength="20" type="password" style="float: left;"/>
+		</li>
+		<li class="clearfix" style="text-align: center;">
+			<label class="zh" for="confirmpassword" style="float: left;margin:13px 11px 0 0;">确认新密码：</label>
+			<input class="zhsr" id="confirmpassword" maxlength="20" type="password" style="float: left;"/>
+		</li>
+	</ul>
+	<button id="comfirm_btn">确认</button>
+	<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/sweet-alert.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>-->
+</body>
+</html>

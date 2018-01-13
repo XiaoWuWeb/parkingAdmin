@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="css/sweet-alert.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" href="css/login.css" />
+</head>
+<body onkeydown="keyLogin()">
+	<div class="login">
+		<h2>账号登录</h2>
+	    <label class="clearfix">
+	    	<i class="user-icon"></i>
+	    	<input class="login-input" id="user" type="text" placeholder="请输入用户名" autocomplete="off"/>
+	    </label>
+	    <label class="clearfix">
+	    	<i class="password-icon"></i>
+	    	<input class="login-input" id="password" type="password" placeholder="请输入密码"/>
+	    </label>
+	    <div class="check-box clearfix">  
+                <input type="checkbox" checked="checked" id="remember-password-checkbox">  
+                <label class="checkbox-cont">记住账号密码</label>  
+        </div>  
+	    <button class="on-login" id="on_login">登录</button>
+	</div>
+	<div id="time-cycle" class="hide"></div>
+	<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sweet-alert.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function keyLogin(){
+			if (event.keyCode==13){  //回车键的键值为13
+				document.getElementById("on_login").click(); //调用登录按钮的登录事件
+			}
+		}
+	</script>
+</body>
+</html>

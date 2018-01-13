@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>业主管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../css/layui.css" media="all">
+		<link rel="stylesheet" href="../../css/modules/layer/default/layer.css" media="all">
+		<link rel="stylesheet" href="pager.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="ownersApplyDetail.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/distpicker.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/distpicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header header">
+				<div class="admin-name">泊车后台管理系统</div>
+				<ul class="layui-nav layui-layout-right admin-info">
+					<li class="layui-nav-item">
+						<a href="javascript:;">
+							<img src="../../images/top-nav_icon_welcome.png" class="layui-nav-img nav_icon_welcome"> 欢迎，
+							<span class="user_name">系统管理员</span>
+							<img class="nav_icon_arrow" src="../../images/top-nav_icon_arrow1.png"/>
+						</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a class="change_password" href="javascript:;">修改密码</a>
+							</dd>
+							<dd>
+								<a class="pull_out" href="javascript:;">退出账号</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll inner">
+					<div class="nav innerbox" id="nav">
+						<ul>
+							<li class="map-nav">
+								<!--<span class="hide">mapModule.html</span>
+								<span>地图模块</span>-->
+								<a href="../map/mapModule.html">地图模块</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="parking-nav">
+								<a href="../parking/parkingAdmin.html">车位管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="fix-nav nav-item" data="0">
+								<a href="javascript:;">运维管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="fixFailure">
+										<a href="../fix/fixFailure.html">故障管理</a>
+									</li>
+									<li class="fixInfraction">
+										<a href="../fix/fixInfraction.html">违规停放</a>
+									</li>
+									<li class="fixFeedback">
+										<a href="../fix/fixFeedback.html">客户反馈</a>
+									</li>
+									<li class="fixMoney">
+										<a href="../fix/fixMoney.html">鼓励金管理</a>
+									</li>
+								</ul>
+							</li>
+							<li class="users-nav nav-item" data="0">
+								<a href="javascript:;">用户管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="usersList">
+										<a href="../users/usersList.html">用户列表</a>
+									</li>
+									<li class="usersRecharge">
+										<a href="../users/usersRecharge.html">充值记录</a>
+									</li>
+									<li class="usersConsu">
+										<a href="../users/usersConsu.html">消费记录</a>
+									</li>
+									<li class="usersValidation">
+										<a style="width: 75%;" href="../users/usersValidation.html">实名验证记录</a>
+									</li>
+									<li class="usersMessage">
+										<a href="../users/usersMessage.html">系统消息</a>
+									</li>
+								</ul>
+							</li>
+							<li class="owners-nav nav-item" data="1">
+								<a href="javascript:;">业主管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child" style="display: block;">
+									<li class="ownersList">
+										<a href="../owners/ownersList.html">用户列表</a>
+									</li>
+									<li class="current ownersRequestRecord">
+										<a href="javascript:;" style="width: 85%; color: #fff;">车位申请记录</a>
+									</li>
+									<li class="ownersMoneyList">
+										<a href="../owners/ownersMoneyList.html">提现申请</a>
+									</li>
+									<li class="ownersRevenueList">
+										<a href="../owners/ownersRevenueList.html">收入记录</a>
+									</li>
+								</ul>
+							</li>
+							<li class="agency-nav">
+								<a href="../agency/agencyAdmin.html">代理商管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="traffic-nav nav-item" data="0">
+								<a href="javascript:;">交通部门</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="trafficList">
+										<a href="../traffic/trafficList.html">用户列表</a>
+									</li>
+									<li class="trafficInfo">
+										<a href="../traffic/trafficInfo.html">信息管理</a>
+									</li>
+									<li class="trafficInfraction">
+										<a href="../traffic/trafficInfraction.html">违停推送</a>
+									</li>
+								</ul>
+							</li>
+							<li class="use-nav">
+								<a href="../use/useInstructions.html">使用说明</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="bill-nav nav-item" data="0">
+								<a href="javascript:;">流水账单</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="billTotal">
+										<a href="../bill/billTotal.html">总流水</a>
+									</li>
+									<li class="billAlipay">
+										<a href="../bill/billAlipay.html">支付宝流水</a>
+									</li>
+									<li class="billWeChat">
+										<a href="../bill/billWeChat.html">微信流水</a>
+									</li>
+									<li class="billBankCard">
+										<a href="../bill/billBankCard.html">银行卡流水</a>
+									</li>
+									<li class="billApplePay">
+										<a href="../bill/billApplePay.html">Apple pay</a>
+									</li>
+								</ul>
+							</li>
+							<li class="setup-nav nav-item" data="0">
+								<a href="javascript:;">系统设置</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="setupWarden">
+										<a href="../setup/setupWarden.html">管理员设置</a>
+									</li>
+									<li class="setupOperation">
+										<a href="../setup/setupOperation.html">运营管理</a>
+									</li>
+									<li class="setupAlipay">
+										<a href="../setup/setupAlipay.html">支付宝设置</a>
+									</li>
+									<li class="setupWeChat">
+										<a style="width: 85%;" href="../setup/setupWeChat.html">微信支付设置</a>
+									</li>
+									<li class="setupBankCard">
+										<a style="width: 85%;" href="../setup/setupBankCard.html">银行卡支付设置</a>
+									</li>
+									<li class="setupApplePay">
+										<a style="width: 85%;" href="../setup/setupApplePay.html">Apple pay设置</a>
+									</li>
+									<li class="setupValidation">
+										<a style="width: 85%;" href="../setup/setupValidation.html">实名验证接口设置</a>
+									</li>
+									<li class="setupVersion">
+										<a href="../setup/setupVersion.html">版本管理</a>
+									</li>
+									<li class="setupLogbook">
+										<a href="../setup/setupLogbook.html">操作日志</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="layui-body innerbox">
+					<div class="info-nav">
+						<p class="info-cont">当前位置：<i class="">业主管理</i><i>车位申请记录</i><i class="info-tail">车位申请记录详情</i></p>
+						<span class="time-cycle" id="time-cycle"></span>
+					</div>
+					<div class="edit-box">
+						<p>详情</p>
+						<div class="edit-cont">
+							<ul>
+								<li class="clearfix">
+									<div class="layui-inline">
+								      <label class="label">发送时间：</label>
+								      <div class="input-inline">
+								        <input disabled="disabled" id="time" type="text" class="input" value="2017-11-20 14:30:20">
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="layui-inline">
+								      <label class="label">安装地址：</label>
+								      <div class="input-inline">
+								        <input disabled="disabled" id="address" type="text" class="input" value="XX市XX区XX垃圾兽决你我i次打开到">
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="layui-inline">
+								      <label class="label">联系人：</label>
+								      <div class="input-inline">
+								        <input disabled="disabled" id="name" type="text" class="input" value="杀得快结婚阿斯">
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="layui-inline">
+								      <label class="label">联系电话：</label>
+								      <div class="input-inline">
+								        <input disabled="disabled" id="phone" type="text" class="input" value="1546895635">
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="layui-inline">
+								      <label class="label">车位使用到期时间：</label>
+								      <div class="input-inline">
+								        <input disabled="disabled" id="expirationTime" type="text" class="input" value="2017-11-20 14:30:20">
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="inline">
+								      <label class="label">合同：</label>
+								      <div class="inline-img"><!--contract 图片参数-->
+								      	<img src="../../images/pic_icon.png"/>
+								      </div>
+								    </div>
+								</li>
+								<li class="clearfix">
+									<div class="return_btn">返回</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<script src="../../js/layui.js" charset="utf-8"></script>-->
+		<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+		<!--<script src="laydate/laydate.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="pager.js"></script>
+		<script src="../../layer-v3.1.0/layer/layer.js"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="ownersApplyDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+//			layui.use('element', function() {
+//				var element = layui.element;
+//			});
+//			laydate.render({
+//				    elem: '#test5'
+//				    ,type: 'datetime'
+//				 });
+		</script>
+	</body>
+
+</html>

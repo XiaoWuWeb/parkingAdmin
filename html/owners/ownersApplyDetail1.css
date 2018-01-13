@@ -1,0 +1,144 @@
+.edit-box{
+	width: 1640px;
+	height: 66%;
+	padding: 30px 0 0 40px;
+}
+.edit-box > p{
+	width: 140px;
+	height: 60px;
+	font-size: 16px;
+	color: #3897fd;
+	text-align: center;
+	line-height: 60px;
+	background: #fff;
+}
+.edit-cont{
+	height: 100%;
+	padding:80px 0 0 235px;
+	background: #fff;
+}
+.label{
+	width: 170px;
+	font-size: 16px;
+	color: #303030;
+	text-align: right;
+	line-height: 40px;
+	float: left;
+}
+
+.form-control1{
+	width: 300px;
+	height: 40px;
+	font-size: 14px;
+	color: #303030;
+	line-height: 40px;
+	border: 1px #dadada solid;
+	border-radius: 4px;
+	outline: none;
+	appearance: none;  
+	-moz-appearance: none;  
+	-webkit-appearance: none; 
+	padding: 0 14px;
+}
+
+.form-inline{
+	/*width: 1640px;*/
+	/*height: 70px;*/
+	/*background: url(../../images/search-backgrong.png) no-repeat;*/
+	/*background-color: #fff;*/
+	/*padding: 14px 30px 14px 20px;*/
+	/*margin-top: 15px;*/
+	float: left;
+}
+.form-inline .form-group{
+	display: inline-block;
+	float: left;
+}
+
+.form-group{
+	position: relative;
+	margin-right: 10px;
+}
+
+.form-control{
+	width: 140px;
+	height: 40px;
+	font-size: 14px;
+	color: #303030;
+	line-height: 40px;
+	border: 1px #dadada solid;
+	border-radius: 4px;
+	outline: none;
+	appearance: none;  
+	-moz-appearance: none;  
+	-webkit-appearance: none; 
+	padding: 0 14px;
+
+}
+
+.form-group > img{
+	width: 9px;
+	height: 7px;
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	z-index: 2;
+	transition:all 0.2s;
+}
+
+select.form-control option {
+
+} 
+select.form-control option:hover { 
+	background-color: #f80; 
+	color: #fff; 
+} 
+
+.input-inline{
+	width: 300px;
+	height: 40px;
+	float: left;
+}
+.input{
+	display: block;
+	width: 100%;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	border: 1px #dadada solid;
+	border-radius: 4px;
+	padding-left: 20px;
+	cursor: not-allowed;
+}
+.edit-cont ul li {
+	margin-bottom: 20px;
+}
+.return_btn{
+	width: 140px;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: #3897fd;
+	float: left;
+	margin:10px 20px 0 170px;
+	cursor: pointer;
+}
+
+.inline-img{
+	width: 140px;
+	height: 140px;
+	background: #e4e4e4;
+	border-radius: 4px;
+	line-height: 140px;
+	text-align: center;
+	float: left;
+}
+
+.inline-img img{
+	/*display: block;*/
+    width: 30px;
+    height: 26px;
+}

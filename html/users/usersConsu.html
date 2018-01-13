@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>用户管理-消费记录</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../css/layui.css" media="all">
+		<link rel="stylesheet" href="../../css/modules/layer/default/layer.css" media="all">
+		<link rel="stylesheet" href="pager.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="usersConsu.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/distpicker.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/distpicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header header">
+				<div class="admin-name">泊车后台管理系统</div>
+				<ul class="layui-nav layui-layout-right admin-info">
+					<li class="layui-nav-item">
+						<a href="javascript:;">
+							<img src="../../images/top-nav_icon_welcome.png" class="layui-nav-img nav_icon_welcome"> 欢迎，
+							<span class="user_name">系统管理员</span>
+							<img class="nav_icon_arrow" src="../../images/top-nav_icon_arrow1.png"/>
+						</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a class="change_password" href="javascript:;">修改密码</a>
+							</dd>
+							<dd>
+								<a class="pull_out" href="javascript:;">退出账号</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll inner">
+					<div class="nav innerbox" id="nav">
+						<ul>
+							<li class="map-nav">
+								<!--<span class="hide">mapModule.html</span>
+								<span>地图模块</span>-->
+								<a href="../map/mapModule.html">地图模块</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="parking-nav">
+								<a href="../parking/parkingAdmin.html">车位管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="fix-nav nav-item" data="0">
+								<a href="javascript:;">运维管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li class="fixFailure">
+										<a href="../fix/fixFailure.html">故障管理</a>
+									</li>
+									<li class="fixInfraction">
+										<a href="../fix/fixInfraction.html">违规停放</a>
+									</li>
+									<li class="fixFeedback">
+										<a href="../fix/fixFeedback.html">客户反馈</a>
+									</li>
+									<li class="fixMoney">
+										<a href="../fix/fixMoney.html">鼓励金管理</a>
+									</li>
+								</ul>
+							</li>
+							<li class="users-nav nav-item" data="1">
+								<a href="javascript:;">用户管理</a>
+								<!--<img class="icon_arrow" style="display: none;" src="../../images/left-nav_icon_arrow.png"></img>-->
+								<ul class="nav-child" style="display: block;">
+									<li class="usersList">
+										<a href="usersList.html">用户列表</a>
+									</li>
+									<li class="usersRecharge">
+										<a href="usersRecharge.html">充值记录</a>
+									</li>
+									<li class="current usersConsu">
+										<a style="color: #fff;" href="javascript:;">消费记录</a>
+									</li>
+									<li class="usersValidation">
+										<a style="width: 75%;" href="usersValidation.html">实名验证记录</a>
+									</li>
+									<li class="usersMessage">
+										<a href="usersMessage.html">系统消息</a>
+									</li>
+								</ul>
+							</li>
+							<li class="owners-nav nav-item" data="0">
+								<a href="javascript:;">业主管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li>
+										<a href="../owners/ownersList.html">用户列表</a>
+									</li>
+									<li>
+										<a style="width: 75%;" href="../owners/ownersRequestRecord.html">车位申请记录</a>
+									</li>
+									<li>
+										<a href="../owners/ownersMoneyList.html">提现申请</a>
+									</li>
+									<li>
+										<a href="../owners/ownersRevenueList.html">收入记录</a>
+									</li>
+								</ul>
+							</li>
+							<li class="agency-nav">
+								<a href="../agency/agencyAdmin.html">代理商管理</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="traffic-nav nav-item" data="0">
+								<a href="javascript:;">交通部门</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li>
+										<a href="../traffic/trafficList.html">用户列表</a>
+									</li>
+									<li>
+										<a href="../traffic/trafficInfo.html">信息管理</a>
+									</li>
+									<li>
+										<a href="../traffic/trafficInfraction.html">违停推送</a>
+									</li>
+								</ul>
+							</li>
+							<li class="use-nav">
+								<a href="../use/useInstructions.html">使用说明</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+							</li>
+							<li class="bill-nav nav-item" data="0">
+								<a href="javascript:;">流水账单</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li>
+										<a href="../bill/billTotal.html">总流水</a>
+									</li>
+									<li>
+										<a href="../bill/billAlipay.html">支付宝流水</a>
+									</li>
+									<li>
+										<a href="../bill/billWeChat.html">微信流水</a>
+									</li>
+									<li>
+										<a href="../bill/billBankCard.html">银行卡流水</a>
+									</li>
+									<li>
+										<a href="../bill/billApplePay.html">Apple pay</a>
+									</li>
+								</ul>
+							</li>
+							<li class="setup-nav nav-item" data="0">
+								<a href="javascript:;">系统设置</a>
+								<img class="icon_arrow" src="../../images/left-nav_icon_arrow.png"></img>
+								<ul class="nav-child">
+									<li>
+										<a href="../setup/setupWarden.html">管理员设置</a>
+									</li>
+									<li>
+										<a href="../setup/setupOperation.html">运营管理</a>
+									</li>
+									<li>
+										<a href="../setup/setupAlipay.html">支付宝设置</a>
+									</li>
+									<li>
+										<a style="width: 85%;" href="../setup/setupWeChat.html">微信支付设置</a>
+									</li>
+									<li>
+										<a style="width: 85%;" href="../setup/setupBankCard.html">银行卡支付设置</a>
+									</li>
+									<li>
+										<a style="width: 85%;" href="../setup/setupApplePay.html">Apple pay设置</a>
+									</li>
+									<li>
+										<a style="width: 95%;" href="../setup/setupValidation.html">实名验证接口设置</a>
+									</li>
+									<li>
+										<a href="../setup/setupVersion.html">版本管理</a>
+									</li>
+									<li>
+										<a href="../setup/setupLogbook.html">操作日志</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="layui-body innerbox">
+					<div class="info-nav">
+						<p class="info-cont">当前位置：<i>用户管理</i><i class="info-tail">消费记录</i></p>
+						<span class="time-cycle" id="time-cycle"></span>
+					</div>
+					<div class="search-toggle">
+						<form class="form-inline">
+							<div id="distpicker5">
+								<div class="form-group">
+									<label class="layui-form-label">所属城市：</label>
+									<select class="form-control" id="province10"></select>
+									<img src="../../images/search_icon_arrow.png" />
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="city10"></select>
+									<img src="../../images/search_icon_arrow.png" />
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="district10"></select>
+									<img src="../../images/search_icon_arrow.png" />
+								</div>
+								<div class="form-group">
+									<label class="layui-form-label" style="padding-left: 0 !important;">用户账号：</label>
+									<div class="layui-input-block">
+										<input type="text" id="name" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<button class="search-btn">搜索</button>
+							</div>
+						</form>
+					</div>
+					<!--<table class="layui-hide" id="test"></table>-->
+					<div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1" style=" ">
+						<div class="layui-table-box">
+							<div class="layui-table-header">
+								<table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+									<thead>
+										<tr>
+											<th data-field="id">
+												<div class="layui-table-cell laytable-cell-1-id"><span>序号</span></div>
+											</th>
+											<th data-field="sex">
+												<div class="layui-table-cell laytable-cell-1-sex"><span>用户账号</span></div>
+											</th>
+											<th data-field="city">
+												<div class="layui-table-cell laytable-cell-1-city"><span>登录地</span></div>
+											</th>
+											<th data-field="sign">
+												<div class="layui-table-cell laytable-cell-1-sign"><span>停车地址</span></div>
+											</th>
+											<th data-field="experience">
+												<div class="layui-table-cell laytable-cell-1-experience"><span>时间</span></div>
+											</th>
+											<th data-field="logins">
+												<div class="layui-table-cell laytable-cell-1-logins"><span>时长</span></div>
+											</th>
+											<th data-field="classify">
+												<div class="layui-table-cell laytable-cell-1-classify"><span>金额</span></div>
+											</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div class="layui-table-body layui-table-main">
+								<table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+									<tbody>
+										<!--<tr data-index="0" class="">
+											<td data-field="id">
+												<div class="layui-table-cell laytable-cell-1-id">10000</div>
+											</td>
+											<td data-field="sex">
+												<div class="layui-table-cell laytable-cell-1-sex">女</div>
+											</td>
+											<td data-field="city">
+												<div class="layui-table-cell laytable-cell-1-city">城市-0</div>
+											</td>
+											<td data-field="sign">
+												<div class="layui-table-cell laytable-cell-1-sign">545</div>
+											</td>
+											<td data-field="experience" data-minwidth="150">
+												<div class="layui-table-cell laytable-cell-1-experience">2114-55-44 55:55:55</div>
+											</td>
+											<td data-field="logins">
+												<div class="layui-table-cell laytable-cell-1-logins">1个小时10分钟</div>
+											</td>
+											<td data-field="classify" class="detail">
+												<div class="layui-table-cell laytable-cell-1-classify">5.6元</div>
+											</td>
+										</tr>-->
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<style>
+							.laytable-cell-1-id {
+								width: 120px;
+							}
+							
+							.laytable-cell-1-sex {
+								width: 229px;
+							}
+							
+							.laytable-cell-1-city {
+								width: 220px;
+							}
+							
+							.laytable-cell-1-sign {
+								width: 390px;
+							}
+							
+							.laytable-cell-1-experience {
+								width: 220px;
+							}
+							
+							.laytable-cell-1-logins {
+								width: 250px;
+							}
+							
+							.laytable-cell-1-classify {
+								width: 180px;
+							}
+						</style>
+					</div>
+					<div class="page-box" style="width: 1640px;height: 80px; border-top: 1px #909090 solid; background-color: #fff; margin-left: 40px;margin-top: -20px;">
+						<div style="float:right; margin-top: 16px;">
+							<label class="pages" style="float: left; line-height: 60px; margin-right: 20px;"></label>
+							<ul class="pagination" id="page1" style="float: left;">
+						    </ul>
+							<div class="pageJump">
+								<!--<span>跳转到</span>-->
+								<input type="text"/>
+								<!--<span>页</span>-->
+								<button type="button" class="button">跳转</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!--<script src="../../js/layui.js" charset="utf-8"></script>-->
+		<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+		<script src="pager.js"></script> 
+		<script src="../../layer-v3.1.0/layer/layer.js"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="usersConsu.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript">
+			layui.use('element', function() {
+				var element = layui.element;
+			});
+		</script>-->
+		<script type="text/template" id="model">
+			<% var map = obj.map %>
+    	    <% for(var i=0;i<map.length;i++){ %>
+    	    	<% var item = map[i] %>
+    	    	<% var oId = (obj.pc * 12 - 11) + parseInt(i) %>
+    	    	<tr>
+    	    		<td data-field="id">
+    	    			<div class="layui-table-cell laytable-cell-1-id"><%=oId%></div>
+					</td>
+					<td data-field="sex">
+						<div class="layui-table-cell laytable-cell-1-sex"><%=item.mobile%></div>
+					</td>
+					<td data-field="city">
+						<div class="layui-table-cell laytable-cell-1-city"><%=item.cityName + item.areaName%></div>
+					</td>
+					<td data-field="sign">
+						<div class="layui-table-cell laytable-cell-1-sign"><%=item.proName + item.cityName + item.areaName + item.address%></div>
+					</td>
+					<td data-field="experience">
+						<div class="layui-table-cell laytable-cell-1-experience"><%=item.parkstartTime%></div>
+					</td>
+					<td data-field="logins">
+						<div class="layui-table-cell laytable-cell-1-logins"><%=item.parkendTime%></div>
+					</td>
+					<td data-field="classify">
+						<div class="layui-table-cell laytable-cell-1-classify"><%=item.charge_money%></div
+					</td>
+				</tr>
+			<% } %>
+    	</script>
+    	
+	</body>
+
+</html>

@@ -1,0 +1,303 @@
+/*搜索*/
+
+select {   
+      /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/  
+      border: solid 1px #000;   
+      /*很关键：将默认的select选择框样式清除*/  
+      appearance:none;   
+      -moz-appearance:none;   
+      -webkit-appearance:none;   
+      /*在选择框的最右侧中间显示小箭头图片*/  
+      background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll rightright center transparent;   
+      /*为下拉小箭头留出一点位置，避免被文字覆盖*/  
+      padding-right: 14px;   
+    }   
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/  
+    select::-ms-expand { display: none;
+ }
+
+ .search-toggle{
+ 	width: 1640px;
+ 	height: 70px;
+ 	margin: 30px 0 30px 40px;
+ 	background-color: #fff;
+ 	box-shadow:0px 2px 5px #909090;
+ }
+
+.form-inline{
+	/*width: 1640px;*/
+	/*height: 70px;*/
+	/*background: url(../../images/search-backgrong.png) no-repeat;*/
+	/*background-color: #fff;*/
+	/*padding: 14px 30px 14px 20px;*/
+	margin-top: 15px;
+	float: left;
+}
+.form-inline .form-group{
+	display: inline-block;
+	float: left;
+}
+
+.form-group{
+	position: relative;
+	margin-right: 20px;
+}
+
+.form-control{
+	width: 140px;
+	height: 40px;
+	font-size: 16px;
+	color: #303030;
+	line-height: 40px;
+	border: 1px #dadada solid;
+	border-radius: 4px;
+	outline: none;
+	appearance: none;  
+	-moz-appearance: none;  
+	-webkit-appearance: none; 
+	padding: 0 14px;
+
+}
+
+.form-group > img{
+	width: 9px;
+	height: 7px;
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	z-index: 2;
+	transition:all 0.2s;
+}
+
+select.form-control option {
+
+} 
+select.form-control option:hover { 
+	background-color: #f80; 
+	color: #fff; 
+} 
+
+.search-btn{
+	width: 77px;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	background-color: #3897fd;
+	border-radius: 4px;
+	border: none;
+	margin-left: 10px;
+	float: left;
+	cursor: pointer;
+}
+
+.toggle-box{
+	width: 88px;
+	height: 70px;
+	font-size: 16px;
+	color: #303030;
+	text-align: center;
+	background: url(../../images/graph_bg.png) no-repeat;
+	margin-left: 20px;
+	float: left;
+	cursor: pointer;
+}
+.graph_icon{
+	width: 32px;
+	height: 32px;
+	margin-top: 8px;
+}
+
+
+.select-state{
+	position: absolute;
+	top: 73px;
+	right: 120px;
+	z-index: 999;
+	font-size: 16px;
+	color: #303030;
+	text-align: center;
+	line-height: 8px;
+}
+.select-state li{
+	width: 78px;
+	height: 78px;
+	background: url(../../images/lot_bg.png) no-repeat;
+	cursor: pointer;
+}
+.select-state li img{
+	width: 43px;
+	height: 47px;
+	margin-top: 5px;
+}
+
+.layui-form-label{
+	width: auto !important;
+	/*padding-left: 20px !important;*/
+	font-size: 16px !important;
+	text-align: left !important;
+	/*padding-right: 10px !important;*/
+	padding: 11px 16px !important;
+}
+.layui-input{
+	width: 230px !important;
+}
+.layui-input-block{
+	margin-left:0px !important; 
+	float: left;
+}
+
+.add-parking{
+	width: 140px;
+	height: 50px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 50px;
+	border-radius: 4px;
+	background-color: #3897fd;
+	margin: 10px 30px 0 0;
+	float: right;
+	cursor: pointer;
+}
+
+.add-parking img{
+	width: 20px;
+	height: 20px;
+	margin: 15px 0 0 14px;
+	float: left;
+}
+
+.add-parking span{
+	margin-right: 14px;
+	float: right;
+}
+
+.layui-table-view{
+	width: 1640px;
+	margin-left: 40px;
+}
+
+.layui-table-view .layui-table td, .layui-table-view .layui-table th{
+	font-size: 16px !important;
+	color: #606060 !important;
+	border-right: none;
+}
+.laytable-cell-1-id{
+	margin-left: 35px;
+}
+
+.detail{
+	color: #3897fd !important;
+	cursor: pointer !important;
+}
+
+.layui-table thead tr{
+	background: #e4e4e4;
+}
+
+.laytable-cell-1-0{
+	margin-left: 23px;
+}
+
+.laytable-cell-checkbox1{
+	vertical-align: middle;
+	margin-left: 79px;
+	float: left;
+}
+
+.all-delete{
+	font-size: 14px;
+	color: #909090;
+	text-align: center;
+	line-height: 20px;
+}
+
+.edit_btn{
+	display: inline-block;
+	line-height: 16px;
+	border-right: 1px #e4e4e4 solid;
+	padding-right: 8px;
+}
+.edit_btn,.delete_btn,.detail_btn{
+	cursor: pointer;
+}
+.edit_btn:before{
+	display: inline-block;
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: url(../../images/edit_icon.png) no-repeat;
+	margin-right: 5px;
+    vertical-align: bottom;
+}
+
+.delete_btn:before{
+	display: inline-block;
+	content: '';
+	width: 13px;
+	height: 16px;
+	background: url(../../images/delete_icon.png) no-repeat;
+	margin: 0 5px;
+}
+
+.layui-table-cell > .detail_btn{
+	display: inline-block;
+	color: #3897fd;
+	line-height: 16px;
+	border-right: 1px #e4e4e4 solid;
+	padding-right: 8px;
+}
+
+.tab_box{
+	width: 1640px;
+    margin: 30px 0 0 40px;
+	border-bottom: 20px #fff solid;
+}
+.tab_box > li {
+	width: 160px;
+	height: 70px;
+	font-size: 16px;
+	color: #909090;
+	line-height: 70px;
+	text-align: center;
+	background-color: #e4e4e4;
+	float: left;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.tab_box > li.curt{
+	color: #3897fd;
+	background-color: #fff;
+}
+
+.layui-table-cell > span{
+	color: #909090;
+}
+
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #000; 
+    background-color: #fff;
+    color: #000;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #000;
+    color: #000;
+}
+.checked_box{background-color: #e5e5e5;}
+
+.layui-table-cell > .already_btn{
+	width: 60px;
+	height: 26px;
+	font-size: 14px;
+	line-height: 26px;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	background-color: #3897fd;
+	border-radius: 4px;
+	/*border: 1px #e4e4e4 solid;*/
+	margin-left: 8px;
+	cursor: pointer;
+}
